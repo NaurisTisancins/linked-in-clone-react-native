@@ -4,7 +4,7 @@ export type Post = {
   content: string;
   image?: string;
   likes: number;
-  comments?: string[];
+  comment?: Comment[];
 };
 
 export type User = {
@@ -12,4 +12,13 @@ export type User = {
   name: string;
   position: string;
   image?: string;
+};
+
+export type Comment = {
+  user: {
+    name: string;
+    image: string;
+  };
+  comment: string;
+  timestamp: string;
 };
