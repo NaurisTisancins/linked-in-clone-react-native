@@ -25,9 +25,11 @@ function FooterButton({ text, icon }: FooterButtonProps) {
 
 export default function PostListItem({ post }: PostListItemProps) {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={{ uri: post.author.image }} style={styles.userImage} />
+        {post.author.image && (
+          <Image source={{ uri: post.author.image }} style={styles.userImage} />
+        )}
         <View>
           <Text style={styles.userName}>{post.author.name}</Text>
           <Text>{post.author.position}</Text>
@@ -47,6 +49,9 @@ export default function PostListItem({ post }: PostListItemProps) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+  },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

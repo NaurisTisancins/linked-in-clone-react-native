@@ -1,24 +1,24 @@
-export type Post = {
+export interface Post {
   id: string;
-  author: User;
   content: string;
   image?: string;
   likes: number;
-  comment?: Comment[];
-};
+  author: User;
+  comments?: Comment[];
+}
 
-export type User = {
+export interface User {
   id: string;
   name: string;
   position: string;
-  image?: string;
-};
+  image: string;
+}
 
-export type Comment = {
+export interface Comment {
   user: {
     name: string;
     image: string;
   };
   comment: string;
   timestamp: string;
-};
+}

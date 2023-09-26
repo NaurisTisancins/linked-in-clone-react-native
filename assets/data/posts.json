@@ -35,6 +35,7 @@
     },
     "content": "Exciting news! Just landed an internship at Amazon. I figured it's about time I try out this whole e-commerce thing. 😄 #NewBeginnings #FromCEOtoIntern",
     "likes": 254,
+    "image": "",
     "comments": [
       {
         "user": {
@@ -62,6 +63,7 @@
       "position": "CTO at Facebook",
       "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg"
     },
+    "image": "",
     "content": "Join me for a talk on scaling technology in startups",
     "likes": 432,
     "comments": []
