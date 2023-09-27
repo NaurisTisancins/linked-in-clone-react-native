@@ -12,6 +12,8 @@ export interface User {
   name: string;
   position: string;
   image: string;
+  backImage?: string;
+  about?: string;
 }
 
 export interface Comment {

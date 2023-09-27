@@ -28,18 +28,20 @@ export default function PostListItem({ post }: PostListItemProps) {
   return (
     <Link href={`/posts/${post.id}`} asChild>
       <Pressable style={styles.container}>
-        <View style={styles.header}>
-          {post.author.image && (
-            <Image
-              source={{ uri: post.author.image }}
-              style={styles.userImage}
-            />
-          )}
-          <View>
-            <Text style={styles.userName}>{post.author.name}</Text>
-            <Text>{post.author.position}</Text>
+        <Link href={`/users/${post.author.id}`}>
+          <View style={styles.header}>
+            {post.author.image && (
+              <Image
+                source={{ uri: post.author.image }}
+                style={styles.userImage}
+              />
+            )}
+            <View>
+              <Text style={styles.userName}>{post.author.name}</Text>
+              <Text>{post.author.position}</Text>
+            </View>
           </View>
-        </View>
+        </Link>
         <Text style={styles.postContent}>{post.content}</Text>
         {post.image && (
           <Image source={{ uri: post.image }} style={styles.postImage} />
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRighe: 10,
+    marginRight: 10,
   },
 
   userName: {

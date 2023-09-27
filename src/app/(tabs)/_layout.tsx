@@ -76,16 +76,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name='posts/[id]'
-        options={{
-          title: 'Post Details',
-          href: null,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name='briefcase' color={color} />
-          ),
-        }}
-      />
     </Tabs>
   );
 }
