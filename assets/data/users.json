@@ -1,0 +1,62 @@
+[
+  {
+    "id": "u2",
+    "name": "Nauris Tisancins",
+    "position": "Founder at hello world.com",
+    "image": "https://cdn-icons-png.flaticon.com/512/1815/1815936.png"
+  },
+  {
+    "id": "u2",
+    "name": "StepZen, an IBM Company",
+    "position": "GraphQL server with unique architecture",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/stepzen.jpeg"
+  },
+  {
+    "id": "u1",
+    "name": "Jeff Bezon",
+    "position": "Intern @Amazon",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
+  },
+  {
+    "id": "u6",
+    "name": "Samantha Williams",
+    "position": "Full Stack Developer at StackOver",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
+  },
+  {
+    "id": "u7",
+    "name": "Chris Smith",
+    "position": "Product Manager at ManageProd",
+    "image": "https://unsplash.com/photos/sf_1ZDA1YFw"
+  },
+  {
+    "id": "u8",
+    "name": "Jennifer Brown",
+    "position": "UI/UX Designer at DesignInnovate",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
+  },
+  {
+    "id": "u9",
+    "name": "Brian Taylor",
+    "position": "Data Scientist at DataLab",
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png"
+  },
+  {
+    "id": "u10",
+    "name": "Jessica White",
+    "position": "Systems Analyst at SysAnalyse",
+    "image": "https://unsplash.com/photos/sf_1ZDA1YFw"
+  },
+  {
+    "id": "u11",
+    "name": "Daniel Garcia",
+    "position": "DevOps Engineer at OpsDev",
+    "image": "https://unsplash.com/photos/sf_1ZDA1YFw"
+  },
+  {
+    "id": "u12",
+    "name": "Michelle Martinez",
+    "position": "Software Engineer at SoftEng",
+    "image": "https://unsplash.com/photos/sf_1ZDA1YFw"
+  }
+]

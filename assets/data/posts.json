@@ -3,9 +3,9 @@
     "id": "2",
     "author": {
       "id": "u2",
-      "name": "Vadim Savin",
+      "name": "Nauris Tisancins",
       "position": "Founder at notJust.dev",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.png"
+      "image": "https://cdn-icons-png.flaticon.com/512/1815/1815936.png"
     },
     "content": "What does notJust Developer mean to you?",
     "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/pinterest/0.jpeg",
@@ -13,12 +13,12 @@
     "comments": []
   },
   {
-    "id": "stepzen",
+    "id": "lorem",
     "author": {
       "id": "u2",
-      "name": "StepZen, an IBM Company",
+      "name": "hello, an IBM Company",
       "position": "GraphQL server with unique architecture",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/stepzen.jpeg"
+      "image": "https://cdn-icons-png.flaticon.com/512/1815/1815936.png"
     },
     "content": "Become a GraphQL Ninja with StepZen 🚀",
     "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/stepzen-stickers.png",

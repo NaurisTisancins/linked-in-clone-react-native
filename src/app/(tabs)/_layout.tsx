@@ -28,20 +28,20 @@ export default function TabLayout() {
         options={{
           title: 'Home feed',
           tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} />,
-          // headerRight: () => (
-          //   <Link href='/modal' asChild>
-          //     <Pressable>
-          //       {({ pressed }) => (
-          //         <FontAwesome
-          //           name='info-circle'
-          //           size={25}
-          //           color={Colors[colorScheme ?? 'light'].text}
-          //           style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-          //         />
-          //       )}
-          //     </Pressable>
-          //   </Link>
-          // ),
+          headerRight: () => (
+            <Link href='/search' asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name='search'
+                    size={18}
+                    color='gray'
+                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
         }}
       />
       <Tabs.Screen
