@@ -14,6 +14,7 @@ export interface User {
   image: string;
   backImage?: string;
   about?: string;
+  experience?: Experience[];
 }
 
 export interface Comment {
@@ -24,3 +25,10 @@ export interface Comment {
   comment: string;
   timestamp: string;
 }
+
+export type Experience = {
+  id: string;
+  title: string;
+  companyName: string;
+  companyImage?: string;
+};

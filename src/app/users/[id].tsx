@@ -1,6 +1,14 @@
 import { useLayoutEffect, useState } from 'react';
-import { Text, View, StyleSheet, Image, Pressable } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Pressable,
+  ScrollView,
+} from 'react-native';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
+import ExperienceListItem from '../../components/ExperienceListItem';
 
 import userJson from '../../../assets/data/user.json';
 import { User } from '../../types';
@@ -19,7 +27,7 @@ export default function UserProfile() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* header */}
       <View style={styles.header}>
         {/* BG IMG */}
@@ -38,19 +46,27 @@ export default function UserProfile() {
           </Pressable>
         </View>
       </View>
+
       {/* about */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>About</Text>
         <Text style={styles.paragraph}>{user.about}</Text>
       </View>
+
       {/* experience */}
-    </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Experience</Text>
+        {user.experience?.map((item, idx) => (
+          <ExperienceListItem experience={item} key={idx} />
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {},
-  header: { backgroundColor: 'white' },
+  header: { backgroundColor: 'white', marginBottom: 5 },
   backImage: {
     width: '100%',
     aspectRatio: 5 / 1,
