@@ -6,32 +6,59 @@ import {
   Image,
   Pressable,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import ExperienceListItem from '../../components/ExperienceListItem';
 
 import userJson from '../../../assets/data/user.json';
-import { User } from '../../types';
+import { Experience, User } from '../../types';
+import { gql, useQuery } from '@apollo/client';
+
+const query = gql`
+  query MyQuery($id: ID!) {
+    profile(id: $id) {
+      about
+      experience {
+        companyimage
+        companyname
+        id
+        title
+        userid
+      }
+      id
+      image
+      name
+      position
+    }
+  }
+`;
 
 export default function UserProfile() {
-  const [user, setUser] = useState<User>(userJson);
   const { id } = useLocalSearchParams();
   const navigation = useNavigation();
 
+  const { loading, error, data } = useQuery(query, { variables: { id } });
+  const user = data?.profile;
+
   useLayoutEffect(() => {
-    navigation.setOptions({ title: user.name });
+    navigation.setOptions({ title: user?.name || 'User' });
   }, [user?.name]);
 
   const onConnect = () => {
     console.warn('Connect Pressed');
   };
 
+  if (loading) return <ActivityIndicator />;
+
+  if (error) return <Text>{error.message}</Text>;
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* header */}
       <View style={styles.header}>
         {/* BG IMG */}
-        <Image style={styles.backImage} source={{ uri: user.backImage }} />
+        <Image style={styles.backImage} source={{ uri: user.backimage }} />
         <View style={styles.headerContent}>
           {/* Prof IMG */}
           <Image style={styles.profileImage} source={{ uri: user.image }} />
@@ -56,7 +83,7 @@ export default function UserProfile() {
       {/* experience */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Experience</Text>
-        {user.experience?.map((item, idx) => (
+        {user.experience?.map((item: Experience, idx: number) => (
           <ExperienceListItem experience={item} key={idx} />
         ))}
       </View>
