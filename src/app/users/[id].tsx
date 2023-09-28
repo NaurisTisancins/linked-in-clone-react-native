@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    marginVertcial: 5,
+    marginVertical: 5,
   },
   paragraph: {
     lineHeight: 20,
