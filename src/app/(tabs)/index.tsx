@@ -1,10 +1,11 @@
 import { ActivityIndicator, FlatList, Text } from 'react-native';
-import PostListItem from '../../components/PostListItem';
+import PostListItem from '@/components/PostListItem';
 import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
 
-const postList = gql`
-  query PostListQuery {
-    postList {
+const postPaginatedListQuery = gql`
+  query PostPaginatedListQuery($first: Int, $after: Int) {
+    postPaginatedList(first: $first, after: $after) {
       content
       id
       image
@@ -20,7 +21,24 @@ const postList = gql`
 `;
 
 export default function HomeFeedScreen() {
-  const { loading, error, data } = useQuery(postList);
+  const [hasMore, setHasMore] = useState<boolean>(true);
+  const { loading, error, data, fetchMore } = useQuery(postPaginatedListQuery, {
+    variables: { first: 2 },
+  });
+
+  const loadMore = async () => {
+    if (!hasMore) return;
+
+    const res = await fetchMore({
+      variables: { after: data.postPaginatedList.length },
+    });
+
+    if (res.data.postPaginatedList.length === 0) {
+      setHasMore(false);
+    }
+
+    console.log(res.data.postPaginatedList);
+  };
 
   if (loading) {
     return <ActivityIndicator />;
@@ -35,11 +53,25 @@ export default function HomeFeedScreen() {
 
   return (
     <FlatList
-      data={data.postList}
+      data={data.postPaginatedList}
       renderItem={({ item }) => <PostListItem post={item} />}
-      // keyExtractor={(item) => item.id}
+      keyExtractor={(item) => item.id}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ gap: 10 }}
+      onEndReached={loadMore}
+      ListFooterComponent={() => (
+        <Text
+          onPress={loadMore}
+          style={{
+            alignSelf: 'center',
+            fontWeight: '600',
+            fontSize: 20,
+            color: 'royalblue',
+          }}
+        >
+          Load more
+        </Text>
+      )}
     />
   );
 }
