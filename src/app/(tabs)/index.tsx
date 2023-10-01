@@ -36,8 +36,6 @@ export default function HomeFeedScreen() {
     if (res.data.postPaginatedList.length === 0) {
       setHasMore(false);
     }
-
-    console.log(res.data.postPaginatedList);
   };
 
   if (loading) {
@@ -48,8 +46,6 @@ export default function HomeFeedScreen() {
     console.warn(error.message);
     return <Text>Something went wrong</Text>;
   }
-
-  console.log(data);
 
   return (
     <FlatList

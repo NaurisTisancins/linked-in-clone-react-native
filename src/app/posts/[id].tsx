@@ -35,9 +35,6 @@ export default function PostDetailsScreen() {
     return <Text>Something went wrong</Text>;
   }
 
-  console.log(data);
-  console.log('SELECTED POST ID: ', id);
-
   return (
     <ScrollView>
       <PostListItem post={data.post} />
